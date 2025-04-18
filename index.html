@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аудиоплеер с плейлистами</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Аудиоплеер с плейлистами</h1>
+        
+        <div class="playlists">
+            <h2>Плейлисты</h2>
+            <form id="add-playlist-form">
+                <input type="text" id="playlist-name" placeholder="Название плейлиста" required>
+                <button type="submit">Добавить</button>
+            </form>
+            <ul id="playlist-list"></ul>
+        </div>
+
+        <div class="tracks">
+            <h2 id="tracks-header">Треки (выберите плейлист)</h2>
+            <ul id="track-list"></ul>
+            <form id="add-track-form">
+                <input type="text" id="track-name" placeholder="Название трека" required>
+                <input type="file" id="track-file" accept="audio/*" required>
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+
+        <div class="player">
+            <h3 id="now-playing"></h3>
+            <audio id="audio" controls></audio>
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div class="controls">
+                <button id="prev"><i class="fas fa-step-backward"></i></button>
+                <button id="play"><i class="fas fa-play"></i></button>
+                <button id="pause"><i class="fas fa-pause"></i></button>
+                <button id="next"><i class="fas fa-step-forward"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="xlsx.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
